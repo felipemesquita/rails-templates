@@ -17,7 +17,18 @@ rake "features"
 # Needed generates
 generate :rspec
 
-# 
+# Resolving database.yml file.
+run "cp config/database.yml config/database.yml.example"
+
+# Resolving .gitignore file.
+file ".gitignore", <<-CODE
+log/*.log
+tmp/**/*
+.DS_Store
+doc/api
+doc/app
+config/database.yml
+CODE
 
 # Generating home.
 run "rm public/index.html"
