@@ -2,7 +2,6 @@ has_authentication = yes?("Should this project have an authentication support?")
 
 # All about gems.
 gem "authlogic" if has_authentication
-gem "cucumber"
 
 # All about plugins.
 plugin "rspec", :git => "git://github.com/dchelimsky/rspec.git"
@@ -11,11 +10,9 @@ plugin "rspec-rails", :git => "git://github.com/dchelimsky/rspec-rails.git"
 # Installing gems.
 rake "gems:install", :sudo => true
 
-# Needed rakes
-rake "features"
-
 # Needed generates
 generate :rspec
+generate :cucumber
 
 # Resolving database.yml file.
 run "cp config/database.yml config/database.yml.example"
