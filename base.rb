@@ -30,7 +30,7 @@ CODE
 # Generating home.
 run "rm public/index.html"
 generate :controller, "home"
-route "map.root :controller => :home"
+route "map.root :controller => 'home'"
 
 # Model about auth.
 generate :model, "user", "login:string", "crypted_password:string", "password_salt:string", "persistence_token:string", "login_count:integer", "last_request_at:datetime", "last_login_at:datetime", "current_login_at:datetime", "last_login_ip:string", "current_login_ip:string" if has_authentication
